@@ -40,6 +40,28 @@ Of course you are free to add linked containers like database, caching etc.
     }
 ```
 
+## Make symfony log to stderr
+
+```yaml
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "php://stderr"
+            level: debug
+            channels: ['!event', '!doctrine']
+        doctrine:
+            type: stream
+            path: "php://stderr"
+            level: debug
+            channels: ['doctrine']
+        console:
+            type: console
+            channels: ['!event', '!doctrine']
+```
+
+You also need to set `error_log = /proc/self/fd/2` in your php.ini (docker-vars.ini)
+
 Use ```docker-compose up``` command to start your development environment.
 
 ## Output logs to stderr (optional)
