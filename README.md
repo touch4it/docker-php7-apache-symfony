@@ -8,6 +8,7 @@ This repository is a source code for following docker images that allow relative
 * touch4it/php7-apache-symfony:php7
 * touch4it/php7-apache-symfony:php7.1
 * touch4it/php7-apache-symfony:php7.2
+* touch4it/php-nginx-symfony:php7.2-fpm-nginx-symfony
 
 # Usage
 
