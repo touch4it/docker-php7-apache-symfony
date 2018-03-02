@@ -1,5 +1,9 @@
-# php7-apache-symfony
-Docker image tailored to run Symfony application. Check https://hub.docker.com/r/touch4it/php7-apache-symfony
+# PHP 7 - Symfony docker images
+Docker image tailored to run Symfony application.
+
+https://hub.docker.com/r/touch4it/php7-apache-symfony
+
+https://hub.docker.com/r/touch4it/php-nginx-symfony/
 
 ## What's here?
 
