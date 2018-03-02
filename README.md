@@ -1,5 +1,9 @@
-# php7-apache-symfony
-Docker image tailored to run Symfony application. Check https://hub.docker.com/r/touch4it/php7-apache-symfony
+# PHP 7 - Symfony docker images
+Docker image tailored to run Symfony application.
+
+https://hub.docker.com/r/touch4it/php7-apache-symfony
+
+https://hub.docker.com/r/touch4it/php-nginx-symfony/
 
 ## What's here?
 
@@ -39,6 +43,28 @@ Of course you are free to add linked containers like database, caching etc.
         return sys_get_temp_dir().'/logs/'.$this->getEnvironment();
     }
 ```
+
+## Make symfony log to stderr
+
+```yaml
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "php://stderr"
+            level: debug
+            channels: ['!event', '!doctrine']
+        doctrine:
+            type: stream
+            path: "php://stderr"
+            level: debug
+            channels: ['doctrine']
+        console:
+            type: console
+            channels: ['!event', '!doctrine']
+```
+
+You also need to set `error_log = /proc/self/fd/2` in your php.ini (docker-vars.ini)
 
 Use ```docker-compose up``` command to start your development environment.
 
