@@ -6,7 +6,7 @@
 version: '2'
 services:
   php:
-    image: touch4it/php-nginx-symfony:php7.2-fpm-nginx-symfony
+    image: touch4it/php-nginx-symfony:php7.2-fpm-nginx-dev
     expose:
       - 80
 ```
@@ -50,7 +50,7 @@ expose_php = Off
 error_prepend_string = null
 error_append_string = null
 error_log = /proc/self/fd/2
-opcache.enable = 1
+opcache.enable = 0
 opcache.memory_consumption = 256
 opcache.max_accelerated_files = 50000
 opcache.validate_timestamps = 0
